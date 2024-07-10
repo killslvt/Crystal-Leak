@@ -1,0 +1,198 @@
+<Window
+	x:Class="Crystal.MainWindow"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:Wpf="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
+	xmlns:local="clr-namespace:Crystal"
+	Title="MainWindow"
+	Height="450"
+	Width="800"
+	Background="#00FFFFFF"
+	WindowStyle="None"
+	AllowsTransparency="True">
+    <FrameworkElement.Resources>
+        <ResourceDictionary>
+            <Style
+				x:Key="RoundedListBox"
+				TargetType="{x:Type ListBox}">
+                <Setter
+					Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate
+							TargetType="{x:Type ListBox}">
+                            <Border
+								Background="{TemplateBinding Control.Background}"
+								BorderBrush="{TemplateBinding Control.BorderBrush}"
+								BorderThickness="{TemplateBinding Control.BorderThickness}"
+								CornerRadius="10">
+                                <ScrollViewer
+									Focusable="False">
+                                    <ItemsPresenter />
+                                </ScrollViewer>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+    </FrameworkElement.Resources>
+    <Border
+		Background="#0D0D0D"
+		CornerRadius="10"
+		Margin="0">
+        <Grid
+			x:Name="CrystalMain">
+            <Wpf:WebView2
+				x:Name="ScriptExecution"
+				FrameworkElement.Margin="183,60,18,76" />
+            <Border
+				Background="#151515"
+				Margin="18,10,18,402"
+				CornerRadius="10"
+				MouseLeftButtonDown="Drag">
+                <Grid>
+                    <Image
+						HorizontalAlignment="Left"
+						Height="36"
+						VerticalAlignment="Center"
+						Width="37"
+						Source="/CrystalLogo.png" />
+                    <TextBlock
+						x:Name="CrystalName"
+						HorizontalAlignment="Left"
+						VerticalAlignment="Top"
+						Foreground="#FFFFFFFF"
+						Text="Crystal"
+						Margin="36,9,0,0"
+						FontFamily="Microsoft Sans Serif"
+						FontSize="10"
+						FontWeight="Bold"
+						Height="12"
+						Width="34" />
+                    <TextBlock
+						x:Name="CrystalDiscord"
+						HorizontalAlignment="Left"
+						VerticalAlignment="Top"
+						Foreground="#FFFFFFFF"
+						Text=".gg/getcrystal"
+						Margin="36,19,0,0"
+						FontFamily="Microsoft Sans Serif"
+						FontSize="10"
+						FontWeight="Bold"
+						Height="12"
+						Width="64" />
+                    <Ellipse
+						Fill="#FFFF0000"
+						Height="14"
+						Width="14"
+						VerticalAlignment="Center"
+						RenderTransformOrigin="-3.78,0.58"
+						HorizontalAlignment="Left"
+						Margin="742,0,0,0"
+						ToolTip="Close"
+						Cursor="Hand"
+						MouseLeftButtonDown="CloseGUI" />
+                    <Ellipse
+						Fill="#FFFFFF00"
+						Height="14"
+						Width="14"
+						VerticalAlignment="Center"
+						RenderTransformOrigin="-3.78,0.58"
+						HorizontalAlignment="Left"
+						Margin="723,0,0,0"
+						ToolTip="Minimize"
+						Cursor="Hand"
+						MouseLeftButtonDown="MinimizeGUI" />
+                </Grid>
+            </Border>
+            <ListBox
+				x:Name="ScriptList"
+				Background="#151515"
+				Margin="18,60,633,76"
+				Foreground="#FFFFFFFF"
+				Style="{StaticResource RoundedListBox}"
+				BorderBrush="{x:Null}"
+				SelectionChanged="ScriptList_SelectionChanged" />
+            <Border
+				Background="#151515"
+				Margin="18,389,15,22"
+				CornerRadius="10">
+                <Grid>
+                    <Image
+						HorizontalAlignment="Left"
+						Height="27"
+						VerticalAlignment="Center"
+						Width="23"
+						Source="/Execute.png"
+						Margin="603,0,0,0"
+						MouseLeftButtonDown="ExecuteScript" />
+                    <Image
+						HorizontalAlignment="Left"
+						Height="27"
+						VerticalAlignment="Top"
+						Width="23"
+						Source="/Load.png"
+						Margin="631,9,0,0"
+						MouseLeftButtonDown="LoadScript" />
+                    <Image
+						HorizontalAlignment="Left"
+						Height="27"
+						VerticalAlignment="Top"
+						Width="23"
+						Source="/Clear.png"
+						Margin="659,9,0,0"
+						MouseLeftButtonDown="ClearEditor" />
+                    <Image
+						HorizontalAlignment="Left"
+						Width="23"
+						Source="/ScriptHub.png"
+						Margin="714,6,0,6"
+						MouseLeftButtonDown="OpenScriptHub" />
+                    <Image
+						HorizontalAlignment="Left"
+						Height="24"
+						VerticalAlignment="Center"
+						Width="22"
+						Source="/Attatch.png"
+						Margin="740,0,0,0"
+						RenderTransformOrigin="0.523,0.429"
+						MouseLeftButtonDown="Attach" />
+                    <Image
+						HorizontalAlignment="Left"
+						Height="27"
+						VerticalAlignment="Top"
+						Width="23"
+						Source="/ReloadScripts.png"
+						Margin="686,9,0,0"
+						MouseLeftButtonDown="RefreshScripts" />
+                    <Ellipse
+						x:Name="InjectionStatus"
+						Fill="#FFFF0000"
+						Height="22"
+						Width="22"
+						VerticalAlignment="Center"
+						RenderTransformOrigin="-3.78,0.58"
+						HorizontalAlignment="Left"
+						Margin="114,0,0,0"
+						ToolTip="Close"
+						Cursor="Hand"
+						MouseLeftButtonDown="MinimizeGUI" />
+                    <TextBlock
+						x:Name="InjectionStatusTXT"
+						HorizontalAlignment="Left"
+						VerticalAlignment="Top"
+						Foreground="#FFFFFFFF"
+						Text="Injection Status:"
+						Margin="10,13,0,0"
+						FontFamily="Microsoft Sans Serif"
+						FontSize="13"
+						FontWeight="Bold"
+						Height="19"
+						Width="99" />
+                </Grid>
+            </Border>
+        </Grid>
+    </Border>
+</Window>
