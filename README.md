@@ -8,4 +8,4 @@ I decided to make their source code public because they are charging for an exec
 
 # Contact
 Discord: killslvt
-Server: https://discord.gg/ESzxG5S4Y2
+Server: [Chromatic](https://discord.gg/ESzxG5S4Y2) -- Celery API Can Be Found Here
