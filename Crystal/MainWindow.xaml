@@ -11,7 +11,8 @@
 	Width="800"
 	Background="#00FFFFFF"
 	WindowStyle="None"
-	AllowsTransparency="True">
+	AllowsTransparency="True"
+    Loaded="Window_Loaded">
     <FrameworkElement.Resources>
         <ResourceDictionary>
             <Style
@@ -70,7 +71,7 @@
 						FontSize="10"
 						FontWeight="Bold"
 						Height="12"
-						Width="34" />
+						Width="111" />
                     <TextBlock
 						x:Name="CrystalDiscord"
 						HorizontalAlignment="Left"
