@@ -1,6 +1,6 @@
 # About
 
-Celery is an executor created by Sai, also known as VPNax. In the past, I leaked this executor due to conflicts with the developers.
+Crystal is an executor created by Sai, also known as VPNax. In the past, I leaked this executor due to conflicts with the developers.
 
 # Reason
 
