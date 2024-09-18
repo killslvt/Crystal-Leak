@@ -7,5 +7,4 @@ Crystal is an executor created by Sai, also known as VPNax. In the past, I leake
 I decided to make their source code public because they are charging for an executor that relies on Celery, which is a free tool.
 
 # Contact
-Discord: killslvt
-Server: [Chromatic](https://discord.gg/ESzxG5S4Y2) -- Celery API Can Be Found Here + More Leaks
+Discord: [Underworld](https://killsec.lol/discord)
